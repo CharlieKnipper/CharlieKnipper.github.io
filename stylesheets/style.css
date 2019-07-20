@@ -1,0 +1,204 @@
+/*General styles go here*/
+body {
+	font-family: 'Open Sans Condensed', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	background-color: black;
+}
+
+
+/*
+.left {
+	background: rgb(0,0,0);
+	background: linear-gradient(90deg, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 100%);
+}
+
+.right {
+	background: rgb(255,255,255);
+	background: linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 100%);
+}
+*/
+
+.content {
+	color: white;
+}
+
+.head {
+	text-align: center;
+}
+
+.title {
+	font-size: 1.5rem;
+}
+
+.time {
+	font-size: 3rem;
+}
+
+.period {
+	font-size: 1rem;
+}
+
+.clock {
+	text-align: center;
+	position: relative;
+	margin: 1vw auto;
+	margin-bottom: 0vw;
+	max-width: 75vw;
+}
+.clock::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	display: block;
+	width: 30vw;
+	height: 1px;
+	background: linear-gradient(to left, white, black);
+}
+.clock::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 50%;
+	display: block;
+	width: 30vw;
+	height: 1px;
+	background: linear-gradient(to right, white, black);
+}
+
+.animation {
+	position: relative;
+	width: 80vw;
+	margin: auto;
+}
+
+.sun {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border-color: rgba(255, 255, 255, 0);
+  background-color: black;
+  border-style: solid;
+  position: absolute;
+  left: 300px;
+  top: 300px;
+  z-index: 1;
+
+  animation-name: sun;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  
+  box-shadow: 0px 0px 200px 200px orange;
+}
+
+.earth {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+  border-color: rgba(255, 255, 255, 0);
+  border-style: solid;
+  position: absolute;
+  left: 300px;
+  top: 300px;
+  z-index: 1;
+	
+  box-shadow: 0px 0px 50px 15px blue;
+}
+
+@keyframes sun {
+  from { transform: rotate(90deg)/*Starting pos*/ translateX(100px)/*radius*/}
+  to   { transform: rotate(450deg)/*Ending pos (360 + start)*/ translateX(100px)/*radius*/}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Smaller mobile device styles go here*/
+
+@media only screen and (min-width: 638px)
+{
+	/*Larger mobile device styles go here*/
+}
+
+@media only screen and (min-width: 875px)
+{
+	/*Portrait-mode tablet styles go here*/
+}
+
+@media only screen and (min-width: 1050px)
+{
+	/*Landscape-mode tablet styles go here*/
+}
+
+@media only screen and (min-width: 1260px)
+{
+	/*720p desktop styles go here (1280x720)*/
+}
+
+@media only screen and (min-width: 1900px)
+{
+	/*1080p desktop styles go here (1920x1080)*/
+}
+
+@media only screen and (min-width: 2028px)
+{
+	/*2K desktop styles go here (2048x1080)*/
+}
+
+@media only screen and (min-width: 2540px)
+{
+	/*1440p desktop styles go here (2560x1440)*/
+}
+
+@media only screen and (min-width: 3120px)
+{
+	/*Intermediary breakpoint between 1440p and 4K*/
+}
+
+@media only screen and (min-width: 3820px)
+{
+	/*4K desktop styles go here (3840x2560)*/
+}
+
+@media only screen and (min-width: 4560px)
+{
+	/*Intermediary breakpoint 1 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 5240px)
+{
+	/*Intermediary breakpoint 2 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 5920px)
+{
+	/*Intermediary breakpoint 3 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 6880px)
+{
+	/*Intermediary breakpoint 4 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 7200px)
+{
+	/*Intermediary breakpoint 5 between 4K and 8K*/
+}
+
+@media only screen and (min-width: 7660px)
+{
+	/*8K and above desktop styles go here (7680x3840)*/
+}
+
+/*Animation styles go here*/
