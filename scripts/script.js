@@ -1,9 +1,9 @@
 //Onload events
-var recur;
+var time;
 
 function onload()
 {
-	recur = setInterval('clock()', 0.1);
+	time = setInterval('clock()', 0.1);
 }
 //Onload events
 

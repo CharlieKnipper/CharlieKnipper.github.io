@@ -1,22 +1,14 @@
 /*General styles go here*/
+html {
+	
+}
+
 body {
 	font-family: 'Open Sans Condensed', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	background-color: black;
+	max-width: 99vw;
 }
-
-
-/*
-.left {
-	background: rgb(0,0,0);
-	background: linear-gradient(90deg, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 100%);
-}
-
-.right {
-	background: rgb(255,255,255);
-	background: linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 100%);
-}
-*/
 
 .content {
 	color: white;
@@ -32,6 +24,7 @@ body {
 
 .time {
 	font-size: 3rem;
+	margin: auto 2px;
 }
 
 .period {
@@ -43,12 +36,12 @@ body {
 	position: relative;
 	margin: 1vw auto;
 	margin-bottom: 0vw;
-	max-width: 75vw;
+	max-width: 90vw;
 }
 .clock::before {
 	content: "";
 	position: absolute;
-	left: 0;
+	left: 0px;
 	top: 50%;
 	display: block;
 	width: 30vw;
@@ -58,7 +51,7 @@ body {
 .clock::after {
 	content: "";
 	position: absolute;
-	right: 0;
+	right: 0px;
 	top: 50%;
 	display: block;
 	width: 30vw;
@@ -68,52 +61,85 @@ body {
 
 .animation {
 	position: relative;
-	width: 80vw;
+	width: 30vw;
+	height: 75vh;
 	margin: auto;
 }
 
 .sun {
-  width: 10px;
-  height: 10px;
+  width: 7vw;
+  height: 7vw;
   border-radius: 50%;
-  border-color: rgba(255, 255, 255, 0);
-  background-color: black;
-  border-style: solid;
-  position: absolute;
-  left: 300px;
-  top: 300px;
-  z-index: 1;
-
-  animation-name: sun;
-  animation-duration: 10s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
   
-  box-shadow: 0px 0px 200px 200px orange;
+  position: absolute;
+  left: calc(15vw/*half wrapper*/ - 3.5vw/*radius*/);
+  top: calc(35% + 15vw - 3.5vw);
+
+  animation: orbit 60s infinite linear;
+  
+  box-shadow: 0px 0px 30px 3vw white, 0px 0px 40px 10vw rgb(232, 186, 93),  0px 0px 150px 20vw orange;
 }
 
 .earth {
-  width: 10px;
-  height: 10px;
+  width: 30vw;
+  height: 30vw;
   border-radius: 50%;
   background-color: black;
-  border-color: rgba(255, 255, 255, 0);
-  border-style: solid;
+  
   position: absolute;
-  left: 300px;
-  top: 300px;
-  z-index: 1;
+  margin: auto;
+  left: 0%;
+  top: 35%;
 	
-  box-shadow: 0px 0px 50px 15px blue;
+  /*box-shadow: 0px 0px 50px 15px white;*/
+			/*h-off, v-off, blur, size, color inset/outset*/
+}
+.earth::before {
+	content: "";
+	position: absolute;
+	left: 15vw;
+	top: 50%;
+	width: 25vw;
+	height: 2px;
+	background-color: white;
+	
+	animation: rotate 360s infinite linear;
+	animation-delay: -190s;
+	animation-play-state: paused;
+	
+	transform: translateX(-25vw) translateY(0vw) rotate(-180deg);
+}
+.earth::after {
+	content: "";
+	position: absolute;
+	left: 15vw;
+	top: 50%;
+	width: 25vw;
+	height: 2px;
+	background-color: white;
+	
+	animation: rotate 360s infinite linear;
+	animation-delay: -350s;
+	animation-play-state: paused;
+	
 }
 
-@keyframes sun {
-  from { transform: rotate(90deg)/*Starting pos*/ translateX(100px)/*radius*/}
-  to   { transform: rotate(450deg)/*Ending pos (360 + start)*/ translateX(100px)/*radius*/}
+@keyframes orbit {
+	from {transform: rotate(-90deg) translate(-27vw) rotate(90deg);}
+	to {transform: rotate(270deg) translate(-27vw) rotate(-270deg);}
 }
 
-
-
+@keyframes rotate {
+	0% {transform: translateX(0vw) translateY(0vw) rotate(0deg);}
+	12% {transform: translateX(-3.5vw) translateY(-9vw) rotate(-45deg);}
+	25% {transform: translateX(-12.5vw) translateY(-12.5vw) rotate(-90deg);}
+	37% {transform: translateX(-21.5vw) translateY(-9vw) rotate(-135deg);}
+	50% {transform: translateX(-25vw) translateY(0vw) rotate(-180deg);}
+	62% {transform: translateX(-21.5vw) translateY(9vw) rotate(-225deg);}
+	75% {transform: translateX(-12.5vw) translateY(12.5vw) rotate(-270deg);}
+	87% {transform: translateX(-3.5vw) translateY(9vw) rotate(-315deg);}
+	100% {transform: translateX(0vw) translateY(0vw) rotate(-360deg);}
+}
 
 
 
