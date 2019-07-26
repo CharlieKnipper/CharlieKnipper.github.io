@@ -103,11 +103,11 @@ body {
 	height: 2px;
 	background-color: white;
 	
-	animation: rotate 360s infinite linear;
-	animation-delay: -190s;
+	animation: rotate 10s infinite linear;
+	/*animation-delay: -190s;
 	animation-play-state: paused;
 	
-	transform: translateX(-25vw) translateY(0vw) rotate(-180deg);
+	transform: translateX(-25vw) translateY(0vw) rotate(-180deg);*/
 }
 .earth::after {
 	content: "";
@@ -118,9 +118,9 @@ body {
 	height: 2px;
 	background-color: white;
 	
-	animation: rotate 360s infinite linear;
+	/*animation: rotate 360s infinite linear;
 	animation-delay: -350s;
-	animation-play-state: paused;
+	animation-play-state: paused;*/
 	
 }
 
