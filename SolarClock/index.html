@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+ 
+ <meta http-equiv="Content-Type" content="text/html;   charset=utf-8"/>
+ <meta name="keywords" content="solar clock time sun position"/>
+ <meta name="description" content="<A unique clock that tracks the position of the sun as seen from the earth.>"/>
+ <meta name="author" content="<Charlie Knipper>"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <title>Solar Clock</title>
+ <link rel="shortcut icon" href="path_to_icon"/>
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+ 
+ <link type="text/css" rel="stylesheet" href="stylesheets/style.css"/>
+ <script src="scripts/script.js"></script>
+
+ </head>
+ <body onload="onload()">
+	<div class="wrapper head">
+		<div class="content title fadeInUp">S o l a r &nbsp; C l o c k</div>
+		<div class="content clock fadeIn">
+			<div class="content time">12 : 00</div>
+		</div>
+		<div class="content period fadeIn">AM</div>
+	</div>
+	
+	<div class="wrapper animation">
+		<div class="sun"></div>
+		<div class="moon"></div>
+		<div class="container rise">
+			<div class="line rise"></div>
+			<div class="box rise"></div>
+		</div>
+		<div class="earth"></div>
+		<div class="container set">
+			<div class="line set"></div>
+			<div class="box set"></div>
+		</div>
+	</div>
+ </body>
+ </html>
