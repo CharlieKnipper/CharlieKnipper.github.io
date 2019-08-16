@@ -1,4 +1,15 @@
 /*General styles go here*/
+:root {
+	--sun-position: 0s;
+	
+	--night-glow: 0px 0px 30px 0.5vw #fff;
+	--moon-set-glow: 0px 0px 30px 2vw #fff, 0px 0px 80px 6vw #F7E0DF, 0px 0px 150px 20vw #F7C4D8, 0px 0px 200px 22vw #F798BE;
+	--sun-rise-glow: 0px 0px 30px 2vw #fff, 0px 0px 80px 8vw #F798BE, 0px 0px 150px 18vw #FFA7AB, 0px 0px 200px 22vw #FFBC77;
+	--day-glow: 0px 0px 30px 2vw #fff, 0px 0px 60px 10vw #E8BA5A, 0px 0px 150px 16vw #FFBC2C, 0px 0px 200px 22vw #FFA400;
+	--sun-set-glow: 0px 0px 30px 2vw #fff, 0px 0px 80px 8vw #FF4A00, 0px 0px 150px 18vw #FF6700, 0px 0px 200px 22vw #FFA400;
+	--moon-rise-glow: 0px 0px 30px 2vw #fff, 0px 0px 80px 6vw #FF4A00, 0px 0px 150px 20vw #AE0035, 0px 0px 200px 22vw #80008A;
+}
+
 html {
 	
 }
@@ -7,7 +18,10 @@ body {
 	font-family: 'Open Sans Condensed', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	background-color: black;
-	max-width: 99vw;
+	max-width: 100vw;
+	max-height: 100vh;
+	
+	overflow: hidden;
 }
 
 .content {
@@ -16,6 +30,8 @@ body {
 
 .head {
 	text-align: center;
+	
+	z-index: 20;
 }
 
 .title {
@@ -66,83 +82,202 @@ body {
 	margin: auto;
 }
 
-.sun {
+.sun {	
   width: 7vw;
   height: 7vw;
   border-radius: 50%;
+  background-color: white;
   
   position: absolute;
   left: calc(15vw/*half wrapper*/ - 3.5vw/*radius*/);
   top: calc(35% + 15vw - 3.5vw);
-
-  animation: orbit 60s infinite linear;
   
-  box-shadow: 0px 0px 30px 3vw white, 0px 0px 40px 10vw rgb(232, 186, 93),  0px 0px 150px 20vw orange;
+  z-index: 0;
+
+  animation: orbitIn 5s linear 1, orbit 86400s linear infinite, sunlight 86400s linear infinite;/*86400s*/
+  animation-play-state: playing;
+  animation-delay: 0s;
+  
+  box-shadow: var(--night-glow);
+  /*box-shadow: 0px 0px 30px 3vw white, 0px 0px 40px 10vw rgb(232, 186, 93),  0px 0px 150px 20vw orange;*/
+}
+
+.moon {
+  width: 7vw;
+  height: 7vw;
+  border-radius: 50%;
+  background-color: white;
+  
+  position: absolute;
+  left: calc(15vw/*half wrapper*/ - 3.5vw/*radius*/);
+  top: calc(35% + 15vw - 3.5vw);
+  
+  z-index: 8;
+
+  animation: orbitIn 5s linear 1, orbit 86400s linear infinite;
+  animation-play-state: playing;
+  animation-delay: 0s;
+  
+  box-shadow: var(--night-glow);
 }
 
 .earth {
   width: 30vw;
   height: 30vw;
   border-radius: 50%;
-  background-color: black;
   
   position: absolute;
   margin: auto;
   left: 0%;
   top: 35%;
+  
+  z-index: 10;
+  
+  animation: earthRotate 86400s linear infinite, shine 86400s linear infinite;
+  animation-play-state: playing;
+  animation-delay: 0s;
 	
-  /*box-shadow: 0px 0px 50px 15px white;*/
-			/*h-off, v-off, blur, size, color inset/outset*/
+  box-shadow: 0vw -3vw 20px 0.1vw white inset;
+  /*h-off, v-off, blur, size, color inset/outset*/
 }
-.earth::before {
-	content: "";
-	position: absolute;
-	left: 15vw;
-	top: 50%;
-	width: 25vw;
-	height: 2px;
-	background-color: white;
+
+.container.rise {
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+  background-color: black;
 	
-	animation: rotate 10s infinite linear;
-	/*animation-delay: -190s;
-	animation-play-state: paused;
-	
-	transform: translateX(-25vw) translateY(0vw) rotate(-180deg);*/
+  position: absolute;
+  margin: auto;
+  left: 0%;
+  top: 35%;
+  
+  animation: rotate 86400s infinite linear;
+  animation-play-state: paused;
+  animation-delay: -21600s;
 }
-.earth::after {
-	content: "";
+.container.set {
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+  background-color: black;
+	
+  position: absolute;
+  margin: auto;
+  left: 0%;
+  top: 35%;
+  
+  animation: rotate 86400s infinite linear;
+  animation-play-state: paused;
+  animation-delay: 21600s;
+}	
+
+.line {
 	position: absolute;
-	left: 15vw;
+	width: 35vw;
+	height: 1%;
+	right: -35vw;
 	top: 50%;
-	width: 25vw;
-	height: 2px;
+	
+	z-index: 9;
+	
 	background-color: white;
+}
+
+.box.rise {
+	background-color: black;
+	overflow: hidden;
 	
-	/*animation: rotate 360s infinite linear;
-	animation-delay: -350s;
-	animation-play-state: paused;*/
+	position: absolute;
+	width: 99.5vw;
+	height: 200vw;
+	right: -35vw;
+	bottom: 50%;
 	
+	z-index: 7;
+}
+.box.set {
+	background-color: black;
+	overflow: hidden;
+	
+	position: absolute;
+	width: 99.5vw;
+	height: 200vw;
+	right: -35vw;
+	top: 50%;
+	
+	z-index: 7;
+}
+
+.fadeInUp {
+	animation: fadeInUp 1s linear 1;
+}
+.fadeIn {
+	animation: fadeIn 2s linear 1;
 }
 
 @keyframes orbit {
-	from {transform: rotate(-90deg) translate(-27vw) rotate(90deg);}
-	to {transform: rotate(270deg) translate(-27vw) rotate(-270deg);}
+	from {transform: rotate(90deg) translate(27vw) rotate(-90deg);}
+	to {transform: rotate(450deg) translate(27vw) rotate(-450deg);}
+}
+
+@keyframes sunlight {
+	0% {box-shadow: var(--night-glow);}
+	13% {box-shadow: var(--moon-set-glow);}
+	25% {box-shadow: var(--sun-rise-glow);}
+	38% {box-shadow: var(--day-glow);}
+	50% {box-shadow: var(--day-glow);}
+	63% {box-shadow: var(--sun-set-glow);}
+	75% {box-shadow: var(--moon-rise-glow);}
+	88% {box-shadow: var(--night-glow);}
+	100% {box-shadow: var(--night-glow);}
+}
+
+@keyframes shine {
+	0% {box-shadow: 0vw -3vw 20px 0.1vw #fff inset;}
+	13% {box-shadow: 0vw -3vw 20px 0.1vw #F7E0DF inset;}
+	25% {box-shadow: 0vw -3vw 20px 0.1vw #F798BE inset;}
+	38% {box-shadow: 0vw -3vw 20px 0.1vw #E8BA5A inset;}
+	50% {box-shadow: 0vw -3vw 20px 0.1vw #E8BA5A inset;}
+	63% {box-shadow: 0vw -3vw 20px 0.1vw #FF4A00 inset;}
+	75% {box-shadow: 0vw -3vw 20px 0.1vw #FF4A00 inset;}
+	88% {box-shadow: 0vw -3vw 20px 0.1vw #fff inset;}
+	100% {box-shadow: 0vw -3vw 20px 0.1vw #fff inset;}
 }
 
 @keyframes rotate {
-	0% {transform: translateX(0vw) translateY(0vw) rotate(0deg);}
-	12% {transform: translateX(-3.5vw) translateY(-9vw) rotate(-45deg);}
-	25% {transform: translateX(-12.5vw) translateY(-12.5vw) rotate(-90deg);}
-	37% {transform: translateX(-21.5vw) translateY(-9vw) rotate(-135deg);}
-	50% {transform: translateX(-25vw) translateY(0vw) rotate(-180deg);}
-	62% {transform: translateX(-21.5vw) translateY(9vw) rotate(-225deg);}
-	75% {transform: translateX(-12.5vw) translateY(12.5vw) rotate(-270deg);}
-	87% {transform: translateX(-3.5vw) translateY(9vw) rotate(-315deg);}
-	100% {transform: translateX(0vw) translateY(0vw) rotate(-360deg);}
+	from {transform: rotate(90deg);}
+	to {transform: rotate(450deg);}
 }
 
+@keyframes earthRotate {
+	from {transform: rotate(0deg);}
+	to {transform: rotate(360deg);}
+}
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0,100%,0);
+        transform: translate3d(0,100%,0);
+    }
 
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+@keyframes fadeIn {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+@keyframes orbitIn {
+	from {animation-delay: 0s;}
+	to {animation-delay: var(--sun-position);}
+}
 
 
 

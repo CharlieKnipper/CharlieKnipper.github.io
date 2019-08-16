@@ -1,9 +1,10 @@
 //Onload events
-var time;
 
 function onload()
 {
-	time = setInterval('clock()', 0.1);
+	getDegrees();
+	//setTimeout('setDegrees()', 5000);
+	setInterval('clock()', 0.1);
 }
 //Onload events
 
@@ -79,3 +80,28 @@ function clock()
 	document.getElementsByClassName("period")[0].innerHTML = period;
 }
 //Clock
+
+function getDegrees()
+{
+	var degDate = new Date();
+	var degHours = degDate.getHours();
+	var degMins = degDate.getMinutes();
+	var degrees = ((degHours * 60) + degMins) * 60;
+	var delay = "-" + degrees + "s";
+	
+	//let root = document.documentElement;
+	//root.style.setProperty('--sun-position', delay);
+	
+	document.getElementsByClassName("sun")[0].style.animationDelay = delay;
+	document.getElementsByClassName("moon")[0].style.animationDelay = delay;
+	document.getElementsByClassName("earth")[0].style.animationDelay = delay;
+}
+
+function setDegrees()
+{
+	document.getElementsByClassName("sun")[0].style.animationDelay = delay;
+	document.getElementsByClassName("moon")[0].style.animationDelay = delay;
+	document.getElementsByClassName("earth")[0].style.animationDelay = delay;
+}
+
+//Remove orbit animation, use js to change the animations
