@@ -169,7 +169,7 @@ body {
   
   animation: rotate 86400s infinite linear;
   animation-play-state: paused;
-  animation-delay: 21600s;
+  animation-delay: -72000s;
 }	
 
 .line {
@@ -189,7 +189,7 @@ body {
 	overflow: hidden;
 	
 	position: absolute;
-	width: 99.5vw;
+	width: 50vw;
 	height: 200vw;
 	right: -35vw;
 	bottom: 50%;
@@ -201,9 +201,9 @@ body {
 	overflow: hidden;
 	
 	position: absolute;
-	width: 99.5vw;
+	width: 60vw;
 	height: 200vw;
-	right: -35vw;
+	right: -50vw;
 	top: 50%;
 	
 	z-index: 7;
@@ -227,9 +227,9 @@ body {
 	25% {box-shadow: var(--sun-rise-glow);}
 	38% {box-shadow: var(--day-glow);}
 	50% {box-shadow: var(--day-glow);}
-	63% {box-shadow: var(--sun-set-glow);}
-	75% {box-shadow: var(--moon-rise-glow);}
-	88% {box-shadow: var(--night-glow);}
+	63% {box-shadow: var(--day-glow);}
+	75% {box-shadow: var(--sun-set-glow);}
+	88% {box-shadow: var(--moon-rise-glow);}
 	100% {box-shadow: var(--night-glow);}
 }
 
@@ -239,9 +239,9 @@ body {
 	25% {box-shadow: 0vw -3vw 20px 0.1vw #F798BE inset;}
 	38% {box-shadow: 0vw -3vw 20px 0.1vw #E8BA5A inset;}
 	50% {box-shadow: 0vw -3vw 20px 0.1vw #E8BA5A inset;}
-	63% {box-shadow: 0vw -3vw 20px 0.1vw #FF4A00 inset;}
+	63% {box-shadow: 0vw -3vw 20px 0.1vw #E8BA5A inset;}
 	75% {box-shadow: 0vw -3vw 20px 0.1vw #FF4A00 inset;}
-	88% {box-shadow: 0vw -3vw 20px 0.1vw #fff inset;}
+	88% {box-shadow: 0vw -3vw 20px 0.1vw #FF4A00 inset;}
 	100% {box-shadow: 0vw -3vw 20px 0.1vw #fff inset;}
 }
 
