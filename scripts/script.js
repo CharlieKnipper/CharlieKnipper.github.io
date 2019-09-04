@@ -1,9 +1,10 @@
-//Onload events
+var SunCalc = require('./suncalc'),
+    t = require('tap');
 
+//Onload events
 function onload()
 {
 	getDegrees();
-	//setTimeout('setDegrees()', 5000);
 	setInterval('clock()', 0.1);
 }
 //Onload events
@@ -89,19 +90,29 @@ function getDegrees()
 	var degrees = ((degHours * 60) + degMins) * 60;
 	var delay = "-" + degrees + "s";
 	
-	//let root = document.documentElement;
-	//root.style.setProperty('--sun-position', delay);
+	var sun = document.getElementsByClassName("sun")[0];
+	var moon = document.getElementsByClassName("moon")[0];
+	var earth = document.getElementsByClassName("earth")[0];
 	
-	document.getElementsByClassName("sun")[0].style.animationDelay = delay;
-	document.getElementsByClassName("moon")[0].style.animationDelay = delay;
-	document.getElementsByClassName("earth")[0].style.animationDelay = delay;
+	var tempDelay = (3 * degrees) / 86400;
+	
+	sun.style.animation = "orbit 3s linear 1, sunlight 5s linear 1";
+	moon.style.animation = "orbit 3s linear 1";
+	earth.style.animation = "earthRotate 4s linear 1, shine 4s linear 1";
+	setTimeout(function()
+	{
+		sun.style.animation = "orbit 86400s linear infinite, sunlight 86400s linear infinite";
+		moon.style.animation = "orbit 86400s linear infinite";
+		earth.style.animation = "earthRotate 86400s linear infinite, shine 86400s linear infinite";
+		sun.style.animationDelay = delay;
+		moon.style.animationDelay = delay;
+		earth.style.animationDelay = delay;
+	}
+	, (tempDelay * 1000));
+
 }
 
-function setDegrees()
+function setBars()
 {
-	document.getElementsByClassName("sun")[0].style.animationDelay = delay;
-	document.getElementsByClassName("moon")[0].style.animationDelay = delay;
-	document.getElementsByClassName("earth")[0].style.animationDelay = delay;
+	
 }
-
-//Remove orbit animation, use js to change the animations

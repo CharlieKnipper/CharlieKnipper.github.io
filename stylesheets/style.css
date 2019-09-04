@@ -1,7 +1,5 @@
 /*General styles go here*/
 :root {
-	--sun-position: 0s;
-	
 	--night-glow: 0px 0px 30px 0.5vw #fff;
 	--moon-set-glow: 0px 0px 30px 2vw #fff, 0px 0px 80px 6vw #F7E0DF, 0px 0px 150px 20vw #F7C4D8, 0px 0px 200px 22vw #F798BE;
 	--sun-rise-glow: 0px 0px 30px 2vw #fff, 0px 0px 80px 8vw #F798BE, 0px 0px 150px 18vw #FFA7AB, 0px 0px 200px 22vw #FFBC77;
@@ -94,12 +92,11 @@ body {
   
   z-index: 0;
 
-  animation: orbitIn 5s linear 1, orbit 86400s linear infinite, sunlight 86400s linear infinite;/*86400s*/
-  animation-play-state: playing;
-  animation-delay: 0s;
+  /*animation: orbit 86400s linear infinite;/*, sunlight 86400s linear infinite;/*86400s
+  /*animation-play-state: playing;
+  animation-delay: 0s;*/
   
   box-shadow: var(--night-glow);
-  /*box-shadow: 0px 0px 30px 3vw white, 0px 0px 40px 10vw rgb(232, 186, 93),  0px 0px 150px 20vw orange;*/
 }
 
 .moon {
@@ -274,10 +271,6 @@ body {
 	to {opacity: 1;}
 }
 
-@keyframes orbitIn {
-	from {animation-delay: 0s;}
-	to {animation-delay: var(--sun-position);}
-}
 
 
 
