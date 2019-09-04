@@ -96,9 +96,9 @@ function getDegrees()
 	
 	var tempDelay = (3 * degrees) / 86400;
 	
-	sun.style.animation = "orbit 3s linear 1, sunlight 5s linear 1";
+	sun.style.animation = "orbit 3s linear 1, sunlight 3s linear 1";
 	moon.style.animation = "orbit 3s linear 1";
-	earth.style.animation = "earthRotate 4s linear 1, shine 4s linear 1";
+	earth.style.animation = "earthRotate 3s linear 1, shine 3s linear 1";
 	setTimeout(function()
 	{
 		sun.style.animation = "orbit 86400s linear infinite, sunlight 86400s linear infinite";
