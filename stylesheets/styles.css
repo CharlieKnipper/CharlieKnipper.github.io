@@ -117,10 +117,6 @@ a {
 }
 
 /* About */
-.about {
-
-}
-
 .about .content {
     display: flex;
     flex-direction: row;
@@ -187,10 +183,6 @@ a {
 }
 
 /* Activities */
-.activities {
-    
-}
-
 .activities .content {
     display: flex;
     flex-direction: row;
