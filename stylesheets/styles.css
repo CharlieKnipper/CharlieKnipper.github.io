@@ -1,0 +1,215 @@
+:root {
+    --bgAnimSpeed: 5s;
+    --bgColors: linear-gradient(-45deg, #363537, #EF2D56, #ED7D3A, #8CD867, #2FBF71);
+    --titleFont: 'Brush Script MT', cursive;
+    --mainFont: 'Segoe UI', sans-serif;
+
+    --mainColor: rgba(32, 34, 39, 1);
+    --darkColor: rgba(17, 20, 27, 1);
+    --lightColor: rgba(255,255,255,0.7);
+    --radius: 10px;
+}
+
+body {
+    background: var(--mainColor);
+
+    height: 99%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* overflow: hidden; */
+
+    /* Font */
+    color: var(--lightColor);
+    font-family: var(--mainFont);
+    font-size: 1.5em;
+    font-weight: 200;
+	line-height: 1.17;
+}
+
+.gradient {
+    background: var(--bgColors);
+	background-size: 400% 400%;
+	animation: gradient var(--bgAnimSpeed) ease infinite;
+
+    flex: 1;
+    margin: 1%;
+
+    border-radius: var(--radius);
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.container {
+    border-radius: var(--radius);
+
+    background: var(--mainColor);
+
+    margin: 1rem;
+    padding: 2rem;
+    
+    height: 95%;
+}
+
+.separator {
+    border: none;
+    height: 2px;
+    background: linear-gradient(-45deg, #363537, #EF2D56, #ED7D3A, #8CD867, #2FBF71);
+    background-size: 400% 400%;
+    animation: gradient var(--bgAnimSpeed) ease infinite;
+    margin: 2rem 0;
+}
+
+.title {
+    font-family: var(--titleFont);
+    font-size: 2em;
+    font-weight: 500;
+
+    color: transparent;
+    background: linear-gradient(-45deg, #363537, #EF2D56, #ED7D3A, #8CD867, #2FBF71);
+    background-size: 400% 400%;
+    animation: gradient var(--bgAnimSpeed) ease infinite;
+    background-clip: text;
+}
+
+.gradText {
+    color: transparent;
+    background: linear-gradient(-45deg, #363537, #EF2D56, #ED7D3A, #8CD867, #2FBF71);
+    background-size: 400% 400%;
+    animation: gradient var(--bgAnimSpeed) ease infinite;
+    background-clip: text;
+}
+
+a {
+    font-weight: 400;
+}
+
+/* Profile */
+.profile {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile img {
+    width: auto;
+    height: 16rem;
+
+    border-radius: var(--radius);
+    border: 10px solid var(--darkColor);
+
+    margin: 2rem;
+}
+
+.bio {
+    padding: 1rem;
+}
+
+/* About */
+.about {
+
+}
+
+.about .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.about .blurb {
+    max-width: 30%;
+    height: auto;
+}
+
+.map {
+    position: relative;
+    width: 100%;
+    
+    margin: 1rem;
+}
+
+.map-gradient {
+    mask-size: contain;
+    position: absolute;
+    inset: 0;
+
+    mask: url(#map-mask);
+
+    background: var(--bgColors);
+	background-size: 400% 400%;
+	animation: gradient var(--bgAnimSpeed) ease infinite;
+}
+
+.path {
+    stroke: var(--mainColor);
+    fill: var(--lightColor);
+    stroke-width: 0.97063118000000004;
+}
+
+.circle {
+    fill: #ffffff;
+    stroke: #ffffff;
+}
+
+.line {
+    stroke: #ffffff;
+    stroke-width: 3px;
+
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+
+    animation: drawLine 3s ease infinite;
+}
+
+.line:nth-of-type(1) {
+    animation-delay: 0s;
+}
+
+.line:nth-of-type(2) {
+    animation-delay: 1s;
+}
+
+@keyframes drawLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Activities */
+.activities {
+    
+}
+
+.activities .content {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    margin-right: 0;
+}
+
+.activities .blurb {
+    max-width: 30%;
+    height: auto;
+}
+
+.activities table {
+    width: 70%;
+    height: auto;
+
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1rem;
+    margin-right: 3rem;
+}

@@ -1,0 +1,25 @@
+{
+    "activities":
+    [
+        {
+            "title":"Drill Diver",
+            "desc":"I helped develop the 2D speedrunning platformer \"Drill Diver\" as part of a team for UCF's AI for Game Programming course in Fall 2025. Drill Diver was awarded the \"Best Game Design\" award.",
+            "link":"https://derpcan.itch.io/drill-diver"
+        },
+        {
+            "title":"\"The Bias is in the Details: An Assessment of Cognitive Bias in LLMs\"",
+            "desc":"I helped develop a custom dataset to measure cognitive bias-like patterns in LLMs. Submitted to TACL in 2025; awaiting final decision.",
+            "link":"https://arxiv.org/abs/2509.22856"
+        },
+        {
+            "title":"MTU Graduation",
+            "desc":"I graduated from the Michigan Technological University in May of 2024 with a BS in Computer Engineering and a minor in Psychology.",
+            "link":"https://www.youtube.com/live/OE_b9p3HYMs?si=eU8rBm6N5E4A9d13"
+        },
+        {
+            "title":"Senior Design Project",
+            "desc":"I helped build a benchmarking pipeline for proprietary software in Bash, C, and C++. Learn more about the project at the link.",
+            "link":"https://www.mtu.edu/enterprise/involved/expo/past-expos/2024/senior-design/#:~:text=Sponsors-,205,-.%20Calculation%20of%20radiation"
+        }
+    ]
+}
