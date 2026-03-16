@@ -1,7 +1,7 @@
 :root {
     --bgAnimSpeed: 5s;
     --bgColors: linear-gradient(-45deg, #363537, #EF2D56, #ED7D3A, #8CD867, #2FBF71);
-    --titleFont: 'Brush Script MT', cursive;
+    --titleFont: 'Comic Relief', system-ui;
     --mainFont: 'Segoe UI', sans-serif;
 
     --mainColor: rgba(32, 34, 39, 1);
