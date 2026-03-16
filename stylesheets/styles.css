@@ -124,15 +124,19 @@ a {
 }
 
 .about .blurb {
-    max-width: 30%;
+    max-width: 20%;
     height: auto;
 }
 
 .map {
     position: relative;
-    width: 100%;
+    width: 80%;
     
     margin: 1rem;
+}
+
+.map svg {
+    width: 100%;
 }
 
 .map-gradient {
