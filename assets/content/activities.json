@@ -2,6 +2,21 @@
     "activities":
     [
         {
+            "title":"Texture Painter 3D",
+            "desc":"I created a Unity VR application for authoring object textures in a 3D environment, with an emphasis on intuitive controls and interactions.",
+            "link":"https://charlieknipper.itch.io/texture-painter-3d"
+        },
+        {
+            "title":"Event-based DataVis for Gameplay",
+            "desc":"I created a proof-of-concept visualization technique for videogame gameplay recordings that can be transcribed into a timeseries dataset of events.",
+            "link":"https://charlieknipper.github.io/Stygian-DataVis/"
+        },
+        {
+            "title":"A Small-Scale Fluid Framework",
+            "desc":"I implemented a compute-shader based 3D fluid simulation using a variant of smoothed particle hydrodynamics (SPH) in Godot.",
+            "link":"https://github.com/CharlieKnipper/SSFF"
+        },
+        {
             "title":"Drill Diver",
             "desc":"I helped develop the 2D speedrunning platformer \"Drill Diver\" as part of a team for UCF's AI for Game Programming course in Fall 2025. Drill Diver was awarded the \"Best Game Design\" award.",
             "link":"https://derpcan.itch.io/drill-diver"
@@ -12,13 +27,13 @@
             "link":"https://arxiv.org/abs/2509.22856"
         },
         {
-            "title":"MTU Graduation",
-            "desc":"I graduated from the Michigan Technological University in May of 2024 with a BS in Computer Engineering and a minor in Psychology.",
-            "link":"https://www.youtube.com/live/OE_b9p3HYMs?si=eU8rBm6N5E4A9d13"
+            "title":"\"TAGMI - A Taxonomy for Artificial General Machine Intelligence\"",
+            "desc":"I co-authored a proposed framework for classifying types of artifical intelligence based on foundations of cognitive psychology.",
+            "link":"https://southnlp.github.io/southnlp2024/papers/southnlp2024-poster-28.pdf"
         },
         {
-            "title":"Senior Design Project",
-            "desc":"I helped build a benchmarking pipeline for proprietary software in Bash, C, and C++. Learn more about the project at the link.",
+            "title":"MTU Senior Design Project",
+            "desc":"I built a simple profiling pipeline for proprietary software using Bash, C, and C++. Learn more about the project at the link.",
             "link":"https://www.mtu.edu/enterprise/involved/expo/past-expos/2024/senior-design/#:~:text=Sponsors-,205,-.%20Calculation%20of%20radiation"
         }
     ]

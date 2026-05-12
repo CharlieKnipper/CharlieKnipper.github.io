@@ -205,7 +205,7 @@ a {
     height: auto;
 
     list-style-type: none;
-    padding: 0;
-    margin-top: 1rem;
-    margin-right: 3rem;
+
+    border-collapse: separate;
+    border-spacing: 1rem;
 }
